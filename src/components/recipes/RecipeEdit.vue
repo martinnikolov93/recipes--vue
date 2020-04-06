@@ -5,7 +5,7 @@
 
     <form @submit.prevent="onSubmit">
       <fieldset>
-        <p class="field field-icon">
+        <p>
           <label for="recipe-name">
             <span>
               Recipe name:
@@ -18,7 +18,34 @@
             id="recipe-name"
           />
         </p>
-
+        <p>
+          <label for="recipe-description">
+            <span>
+              Recipe description
+            </span>
+          </label>
+          <textarea
+            v-model="selectedRecipe.recipeDescr"
+            type="textarea"
+            name="recipe-description"
+            id="recipe-description"
+            placeholder="Recipe description"
+          ></textarea>
+        </p>
+        <p>
+          <label for="recipe-img">
+            <span>
+              Recipe image
+            </span>
+          </label>
+          <input
+            v-model="selectedRecipe.recipeImg"
+            type="text"
+            name="recipe-img"
+            id="recipe-img"
+            placeholder="Recipe image"
+          />
+        </p>
         <p>
           <button>Edit</button>
         </p>

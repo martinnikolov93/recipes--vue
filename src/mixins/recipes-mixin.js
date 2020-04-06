@@ -44,7 +44,7 @@ export default {
             try {
                 console.log(recipeId, recipeData)
                 await axiosDb.put(`recipes/${recipeId}.json`, recipeData).then(() => {
-                    this.$router.push(`/recipe/${recipeId}`)
+                    this.$router.push({ name: 'recipe-details', params: { id: recipeId }})
                 })
             } catch(err) {
                 console.log(err);

@@ -3,6 +3,8 @@
     recipe details works
     <div>Recipe ID: {{recipeId}}</div>
     <div>Recipe Name: {{selectedRecipe.name}}</div>
+    <div>Recipe Description: {{selectedRecipe.recipeDescr}}</div>
+    <div><img v-bind:src="selectedRecipe.recipeImg" /> </div>
     <router-link :to="recipeId | recipeEditLink">Edit</router-link>
   </div>
 </template>
@@ -18,7 +20,6 @@ export default {
   data: function () {
     return {
         recipeId: this.$route.params.id,
-        recipe: {},
     };
   },
   beforeCreate() {
