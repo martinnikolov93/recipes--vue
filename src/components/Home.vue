@@ -1,44 +1,44 @@
 <template>
   <div id="home">
-      <div v-if="isAuth">
-        Home Page works (authenticated)
+    <div v-if="isAuth">
+      Home Page works (authenticated)
+      <div v-if="loader">Loading data..</div>
+      <div v-else>
         <p v-for="r in recipes" :key="r.recipeId">
-          <router-link :to="r | recipeViewLink">{{r.name}}</router-link>
+          <router-link :to="r | recipeViewLink">{{ r.name }}</router-link>
         </p>
       </div>
-      <div v-else>
-        Home Page works (not authenticated)
-      </div>
+    </div>
+    <div v-else>
+      Home Page works (not authenticated)
+    </div>
   </div>
 </template>
 
 <script>
-import recipesMixin from '@/mixins/recipes-mixin';
+import recipesMixin from "@/mixins/recipes-mixin";
 
 export default {
-  name: 'Home',
+  name: "Home",
   props: {
-    isAuth: Boolean
+    isAuth: Boolean,
   },
   data: function() {
-    return {
-    }
+    return {};
   },
   filters: {
-    recipeViewLink(recipe){
+    recipeViewLink(recipe) {
       return `/recipe/${recipe.recipeId}`;
-    }
+    },
   },
   beforeCreate() {
-    this.$emit('onAuth', localStorage.getItem('token') !== null);
+    this.$emit("onAuth", localStorage.getItem("token") !== null);
   },
   created() {
     this.getAllPosts();
   },
-  mixins: [recipesMixin]
-}
+  mixins: [recipesMixin],
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

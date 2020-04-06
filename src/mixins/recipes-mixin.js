@@ -4,7 +4,8 @@ export default {
     data: function() {
         return { 
             selectedRecipe: {},
-            recipes: []
+            recipes: [],
+            loader: true
          }
     },
     methods: {
@@ -18,6 +19,7 @@ export default {
                     ...allRecipesRes[recipeId]
                   });
                 }
+                this.loader = false;
             } catch(err) {
                 console.log(err);
             }
@@ -26,6 +28,7 @@ export default {
             try {
                 await axiosDb.post(`recipes.json`, recipe).then(() => {
                     this.$router.push("/");
+                    this.loader = false;
                 });
             } catch(err) {
                 console.log(err);
@@ -35,6 +38,7 @@ export default {
             try {
                 await axiosDb.get(`recipes/${recipeId}.json`).then(res => {
                     this.selectedRecipe = res.data;
+                    this.loader = false;
                 })
             } catch(err) {
                 console.log(err);
@@ -45,6 +49,7 @@ export default {
                 console.log(recipeId, recipeData)
                 await axiosDb.put(`recipes/${recipeId}.json`, recipeData).then(() => {
                     this.$router.push({ name: 'recipe-details', params: { id: recipeId }})
+                    this.loader = false;
                 })
             } catch(err) {
                 console.log(err);
