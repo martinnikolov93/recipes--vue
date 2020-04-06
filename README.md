@@ -1,3 +1,5 @@
+# Project status
+Project still in development..
 # About
 Simple recipe publishing website
 # Requirements
