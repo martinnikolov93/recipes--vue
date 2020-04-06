@@ -39,6 +39,16 @@ export default {
             } catch(err) {
                 console.log(err);
             }
+        },
+        async editRecipe(recipeId, recipeData) {
+            try {
+                console.log(recipeId, recipeData)
+                await axiosDb.put(`recipes/${recipeId}.json`, recipeData).then(() => {
+                    this.$router.push(`/recipe/${recipeId}`)
+                })
+            } catch(err) {
+                console.log(err);
+            }
         }
     }
 }

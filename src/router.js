@@ -33,21 +33,21 @@ function authGuard(to, from, next) {
 const routes = [
     { path: '/', component: Home },
     {
-        path: '/sign-in', component: SignIn, beforeEnter: anonymousGuard
+        path: '/sign-in', name: 'sign-in', component: SignIn, beforeEnter: anonymousGuard
     },
     {
-        path: '/sign-up', component: SignUp, beforeEnter: anonymousGuard
+        path: '/sign-up', name: 'sign-up', component: SignUp, beforeEnter: anonymousGuard
     },
     {
         path: '/recipe', component: RecipeStart, beforeEnter: authGuard, children: [
             {
-                path: 'add-recipe', component: AddRecipe
+                path: 'add-recipe', name: 'add-recipe', component: AddRecipe
             },
             {
-                path: ':id', component: RecipeDetails
+                path: ':id', name: 'recipe-details', component: RecipeDetails
             },
             {
-                path: ':id/edit', component: RecipeEdit
+                path: ':id/edit', name: 'edit-recipe', component: RecipeEdit
             }
         ]
     },
