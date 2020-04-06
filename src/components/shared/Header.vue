@@ -14,6 +14,9 @@
         <router-link to="/recipe/add-recipe">Add recipe</router-link>
       </li>
       <li v-if="isAuth">
+        <router-link to="/user-profile">Profile</router-link>
+      </li>
+      <li v-if="isAuth">
         <a @click="onLogout" class="logout">Logout</a>
       </li>
     </ul>

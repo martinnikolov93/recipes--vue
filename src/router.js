@@ -9,6 +9,7 @@ import AddRecipe from '@/components/recipes/AddRecipe.vue';
 import RecipeDetails from '@/components/recipes/RecipeDetails.vue';
 import RecipeStart from '@/components/recipes/RecipeStart.vue';
 import RecipeEdit from '@/components/recipes/RecipeEdit.vue';
+import UserProfile from '@/components/user/UserProfile.vue';
 
 
 Vue.use(VueRouter);
@@ -50,6 +51,9 @@ const routes = [
                 path: ':id/edit', name: 'edit-recipe', component: RecipeEdit
             }
         ]
+    },
+    {
+        path: '/user-profile', name: 'user-profile', component: UserProfile, beforeEnter: authGuard
     },
     {
         path: '*', component: NotFound

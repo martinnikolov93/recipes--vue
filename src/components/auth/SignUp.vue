@@ -15,7 +15,7 @@
             type="text"
             name="username"
             id="username"
-            placeholder="Mark Ulrich"
+            placeholder="Username"
           />
         </p>
 
@@ -31,7 +31,7 @@
               <i class="fas fa-envelope"></i>
             </span>
           </label>
-          <input v-model="email" type="text" name="email" id="email" placeholder="marg@gmial.com" />
+          <input v-model="email" type="text" name="email" id="email" placeholder="example@gmail.com" />
         </p>
 
         <p class="field field-icon">
@@ -87,7 +87,7 @@ export default {
       username: "",
       email: "",
       password: "",
-      rePassword: ""
+      rePassword: "",
     };
   },
   methods: {
@@ -95,7 +95,8 @@ export default {
       const payload = {
         email: this.email,
         password: this.password,
-        returnSecureToken: true
+        returnSecureToken: true,
+        displayName: this.username
       };
 
       // Project Settings -> Web API key
