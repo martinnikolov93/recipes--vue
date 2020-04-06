@@ -1,6 +1,7 @@
 <template>
   <div>
-     <router-view @onAuth="isAuth = $event" :isAuth="isAuth"></router-view>
+      recipe start works
+     <router-view></router-view>
   </div>
 </template>
 

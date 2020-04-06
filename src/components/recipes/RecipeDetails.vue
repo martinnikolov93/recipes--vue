@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    recipe details works
   </div>
 </template>
 

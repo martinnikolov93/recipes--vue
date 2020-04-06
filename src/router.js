@@ -40,10 +40,10 @@ const routes = [
     {
         path: '/recipe', component: RecipeStart, beforeEnter: authGuard, children: [
             {
-                path: ':id', component: RecipeDetails
+                path: 'add-recipe', component: AddRecipe
             },
             {
-                path: 'add-recipe', component: AddRecipe
+                path: ':id', component: RecipeDetails
             }
         ]
     },
