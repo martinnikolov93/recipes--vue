@@ -1,6 +1,9 @@
 # About
 Simple recipe publishing website
-# Install
+# Requirements
+-NodeJS
+-Computer Terminal (obviously)
+# Install project
 npm install
-# Run project
+# Run project locally
 npm run serve
