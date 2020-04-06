@@ -6,3 +6,5 @@ NodeJS, Computer Terminal (obviously)
 npm install
 # Run project locally
 npm run serve
+# View project
+http://localhost:8080/
