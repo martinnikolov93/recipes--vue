@@ -3,6 +3,7 @@ import axiosDb from '@/axios-database';
 export default {
     data: function() {
         return { 
+            selectedRecipe: {},
             recipes: []
          }
     },
@@ -26,6 +27,15 @@ export default {
                 await axiosDb.post(`recipes.json`, recipe).then(() => {
                     this.$router.push("/");
                 });
+            } catch(err) {
+                console.log(err);
+            }
+        },
+        async getRecipe(recipeId) {
+            try {
+                await axiosDb.get(`recipes/${recipeId}.json`).then(res => {
+                    this.selectedRecipe = res.data;
+                })
             } catch(err) {
                 console.log(err);
             }
