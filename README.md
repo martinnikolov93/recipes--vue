@@ -1,5 +1,5 @@
 # Project status
-Project still in development..
+Project is still ugly and in development..
 # About
 Simple recipe publishing website
 # Requirements
