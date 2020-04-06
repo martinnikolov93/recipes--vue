@@ -8,6 +8,7 @@ import NotFound from '@/components/shared/NotFound.vue';
 import AddRecipe from '@/components/recipes/AddRecipe.vue';
 import RecipeDetails from '@/components/recipes/RecipeDetails.vue';
 import RecipeStart from '@/components/recipes/RecipeStart.vue';
+import RecipeEdit from '@/components/recipes/RecipeEdit.vue';
 
 
 Vue.use(VueRouter);
@@ -44,6 +45,9 @@ const routes = [
             },
             {
                 path: ':id', component: RecipeDetails
+            },
+            {
+                path: ':id/edit', component: RecipeEdit
             }
         ]
     },
