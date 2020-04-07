@@ -26,18 +26,18 @@
 <script>
 export default {
   props: {
-    isAuth: Boolean
+    isAuth: Boolean,
   },
   name: "Header",
   methods: {
     onLogout() {
-      localStorage.removeItem('token');
-      localStorage.removeItem('userId');
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId");
 
-      this.$emit('onAuth', false);
-      this.$router.push({name: 'home'})
-    }
-  }
+      this.$emit("onAuth", false);
+      this.$router.push({ name: "home" });
+    },
+  },
 };
 </script>
 
@@ -55,7 +55,6 @@ export default {
 }
 
 ul {
-  
 }
 
 li {
@@ -77,7 +76,13 @@ li a:hover {
   border-bottom: solid #3b7fc5 1px;
 }
 
+.router-link-exact-active {
+  background-color: #f1f1f1;
+  color: black;
+  border-bottom: solid #3b7fc5 1px;
+}
+
 .logout {
-    cursor: pointer;
+  cursor: pointer;
 }
 </style>
