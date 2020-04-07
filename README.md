@@ -10,3 +10,6 @@ npm install
 npm run serve
 # View project
 http://localhost:8080/
+# Account for testing
+Email: test@test.com
+Password: 123456
