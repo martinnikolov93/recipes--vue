@@ -4,11 +4,11 @@
       <fieldset>
         <h1>Add recipe</h1>
 
-        <p>
+        <p class="field">
           <label for="recipe-name">
-            <span>
+            <div>
               Recipe name
-            </span>
+            </div>
           </label>
           <input
             v-model="recipeName"
@@ -18,11 +18,11 @@
             placeholder="Recipe name"
           />
         </p>
-        <p>
+        <p class="field">
           <label for="recipe-description">
-            <span>
+            <div>
               Recipe description
-            </span>
+            </div>
           </label>
           <textarea
             v-model="recipeDescr"
@@ -32,11 +32,11 @@
             placeholder="Recipe description"
           ></textarea>
         </p>
-        <p>
+        <p class="field">
           <label for="recipe-img">
-            <span>
+            <div>
               Recipe image
-            </span>
+            </div>
           </label>
           <input
             v-model="recipeImg"

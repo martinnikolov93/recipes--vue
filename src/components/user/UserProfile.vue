@@ -1,10 +1,14 @@
 <template>
   <div>
-    user profile works
     <div v-if="loader">Loading user data..</div>
     <div v-else>
-      <div>Your email: {{ userInfo.email }}</div>
-      <div>Your username: {{ userInfo.displayName }}</div>
+      <section>
+        <div class="content">
+          <h2>Your profile</h2>
+          <div>Your email: {{ userInfo.email }}</div>
+          <div>Your username: {{ userInfo.displayName }}</div>
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -34,6 +38,7 @@ export default {
   },
   methods: {},
   mixins: [userService],
+
 };
 </script>
 

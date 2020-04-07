@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <ul>
+    <ul class="navigation">
       <li>
         <router-link to="/">Home</router-link>
       </li>
@@ -42,7 +42,9 @@ export default {
 </script>
 
 <style scoped>
-ul {
+.navigation {
+  box-sizing: border-box;
+  height: 50px;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -50,6 +52,10 @@ ul {
   background-color: white;
   border: solid black 1px;
   border-radius: 2px;
+}
+
+ul {
+  
 }
 
 li {
@@ -66,7 +72,9 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #dadada;
+  background-color: #f1f1f1;
+  color: black;
+  border-bottom: solid #3b7fc5 1px;
 }
 
 .logout {

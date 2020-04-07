@@ -1,8 +1,5 @@
 <template>
   <div>
-    recipe edit works
-    <div>Editing recipe: {{ recipeId }}</div>
-
     <div v-if="loader">Loading data..</div>
     <div v-else>
       <form @submit.prevent="onSubmit">

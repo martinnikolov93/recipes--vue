@@ -21,7 +21,7 @@
       </div>
     </div>
     <div v-else>
-      Home Page works (not authenticated)
+      You have to be logged in to view this page.
     </div>
   </div>
 </template>
@@ -49,6 +49,14 @@ export default {
     this.getAllPosts();
   },
   mixins: [recipesService],
+  methods: {
+    dateStringToTimestamp(date){
+      return Math.round(new Date(date).getTime()/1000);
+    }
+  },
+  computed: {
+
+  },
 };
 </script>
 
@@ -96,7 +104,8 @@ button {
   border: none;
   border-radius: 3px;
   padding: 3px 10px;
-  width: 100%;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 i {
@@ -161,5 +170,16 @@ input.error {
   padding: 5px;
   height: 90px;
   overflow: hidden;
+}
+
+.content {
+  margin: 10px auto;
+  width: 750px;
+  padding: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(51, 51, 51);
+  border-image: initial;
+  border-radius: 3px;
 }
 </style>

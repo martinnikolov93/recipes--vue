@@ -1,6 +1,5 @@
 <template>
   <div>
-      recipe start works
      <router-view></router-view>
   </div>
 </template>

@@ -22,8 +22,9 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(95, 116, 158);
-  color: white;
+  background-color: white;
+  color: black;
   text-align: center;
+  border-top: solid black 1px;
 }
 </style>

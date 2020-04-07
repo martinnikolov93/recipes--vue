@@ -1,13 +1,17 @@
 <template>
   <div>
-    recipe details works
-    <div>Recipe ID: {{ recipeId }}</div>
     <div v-if="loader">Loading data..</div>
     <div v-else>
-      <div>Recipe Name: {{ selectedRecipe.name }}</div>
-      <div>Recipe Description: {{ selectedRecipe.recipeDescr }}</div>
-      <div><img v-bind:src="selectedRecipe.recipeImg" /></div>
-      <router-link class="blue-button" :to="recipeId | recipeEditLink">Edit</router-link>
+      <section>
+        <div class="content">
+          <div><img v-bind:src="selectedRecipe.recipeImg" /></div>
+          <h3>{{ selectedRecipe.name }}</h3>
+          <div>{{ selectedRecipe.recipeDescr }}</div>
+          <router-link class="blue-button" :to="recipeId | recipeEditLink"
+            >Edit</router-link
+          >
+        </div>
+      </section>
     </div>
   </div>
 </template>
