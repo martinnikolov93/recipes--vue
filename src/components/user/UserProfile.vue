@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import authAxios from "@/axios-auth";
+import userService from '@/mixins/user-service';
 
 export default {
   name: "UserProfile",
@@ -27,17 +27,10 @@ export default {
       idToken: localStorage.getItem("token"),
     };
 
-    // Project Settings -> Web API key
-    authAxios
-      .post("/accounts:lookup", payload)
-      .then((res) => {
-        this.userInfo = res.data.users[0];
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    this.getUserData(payload);
   },
   methods: {},
+  mixins: [userService]
 };
 </script>
 

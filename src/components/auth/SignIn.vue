@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import authAxios from "@/axios-auth";
+import userService from '@/mixins/user-service';
 
 export default {
   name: "SignIn",
@@ -60,25 +60,10 @@ export default {
         returnSecureToken: true
       };
 
-      // Project Settings -> Web API key
-      authAxios
-        .post(
-          '/accounts:signInWithPassword',
-          payload
-        )
-        .then(res => {
-          const { idToken, localId } = res.data;
-
-          localStorage.setItem("token", idToken);
-          localStorage.setItem("userId", localId);
-
-          this.$router.push("/");
-        })
-        .catch(err => {
-          console.error(err);
-        });
+      this.signIn(payload);
     }
-  }
+  },
+  mixins: [userService]
 };
 </script>
 

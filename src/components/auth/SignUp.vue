@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import authAxios from "@/axios-auth";
+import userService from '@/mixins/user-service';
 
 export default {
   name: "SignUp",
@@ -99,25 +99,10 @@ export default {
         displayName: this.username
       };
 
-      // Project Settings -> Web API key
-      authAxios
-        .post(
-          "/accounts:signUp",
-          payload
-        )
-        .then(res => {
-          const { idToken, localId } = res.data;
-
-          localStorage.setItem('token', idToken);
-          localStorage.setItem('userId', localId);
-
-          this.$router.push('/');
-        })
-        .catch(err => {
-          console.error(err);
-        });
+      this.signUp(payload);
     }
-  }
+  },
+  mixins: [userService]
 };
 </script>
 
