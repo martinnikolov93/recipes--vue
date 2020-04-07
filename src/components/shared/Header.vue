@@ -35,6 +35,7 @@ export default {
       localStorage.removeItem('userId');
 
       this.$emit('onAuth', false);
+      this.$router.push({name: 'home'})
     }
   }
 };

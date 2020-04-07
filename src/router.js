@@ -11,7 +11,6 @@ import RecipeStart from '@/components/recipes/RecipeStart.vue';
 import RecipeEdit from '@/components/recipes/RecipeEdit.vue';
 import UserProfile from '@/components/user/UserProfile.vue';
 
-
 Vue.use(VueRouter);
 
 function anonymousGuard(to, from, next) {
@@ -32,7 +31,7 @@ function authGuard(to, from, next) {
 
 
 const routes = [
-    { path: '/', component: Home },
+    { path: '/', name: 'home', component: Home },
     {
         path: '/sign-in', name: 'sign-in', component: SignIn, beforeEnter: anonymousGuard
     },
