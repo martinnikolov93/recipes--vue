@@ -79,6 +79,7 @@ input {
   /* border: 1px solid #007bff; */
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  width: 100%;
 }
 
 button {

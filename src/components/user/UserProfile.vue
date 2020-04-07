@@ -5,8 +5,8 @@
       <section>
         <div class="content">
           <h2>Your profile</h2>
-          <div>Your email: {{ userInfo.email }}</div>
-          <div>Your username: {{ userInfo.displayName }}</div>
+          <div>Email: {{ userInfo.email }}</div>
+          <div>Username: {{ userInfo.displayName }}</div>
         </div>
       </section>
     </div>

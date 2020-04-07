@@ -4,11 +4,12 @@
     <div v-else>
       <form @submit.prevent="onSubmit">
         <fieldset>
+          <h2>Editing recipe</h2>
           <p>
             <label for="recipe-name">
-              <span>
+              <div>
                 Recipe name:
-              </span>
+              </div>
             </label>
             <input
               v-model="selectedRecipe.name"
@@ -19,11 +20,12 @@
           </p>
           <p>
             <label for="recipe-description">
-              <span>
-                Recipe description
-              </span>
+              <div>
+                Recipe description:
+              </div>
             </label>
             <textarea
+              style="width: 100%;height: 271px;"
               v-model="selectedRecipe.recipeDescr"
               type="textarea"
               name="recipe-description"
@@ -33,9 +35,9 @@
           </p>
           <p>
             <label for="recipe-img">
-              <span>
-                Recipe image
-              </span>
+              <div>
+                Recipe image:
+              </div>
             </label>
             <input
               v-model="selectedRecipe.recipeImg"
