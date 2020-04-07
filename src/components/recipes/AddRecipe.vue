@@ -3,11 +3,10 @@
     <form @submit.prevent="onSubmit">
       <fieldset>
         <h1>Add recipe</h1>
-
-        <p class="field">
+        <p>
           <label for="recipe-name">
             <div>
-              Recipe name
+              Recipe name:
             </div>
           </label>
           <input
@@ -18,13 +17,14 @@
             placeholder="Recipe name"
           />
         </p>
-        <p class="field">
+        <p>
           <label for="recipe-description">
             <div>
-              Recipe description
+              Recipe description:
             </div>
           </label>
           <textarea
+            style="width: 100%;height: 271px;"
             v-model="recipeDescr"
             type="textarea"
             name="recipe-description"
@@ -32,10 +32,10 @@
             placeholder="Recipe description"
           ></textarea>
         </p>
-        <p class="field">
+        <p>
           <label for="recipe-img">
             <div>
-              Recipe image
+              Recipe image:
             </div>
           </label>
           <input

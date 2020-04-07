@@ -4,7 +4,7 @@
     <div v-else>
       <section>
         <div class="content">
-          <h2>Your profile</h2>
+          <h1>Your profile</h1>
           <div>Email: {{ userInfo.email }}</div>
           <div>Username: {{ userInfo.displayName }}</div>
         </div>

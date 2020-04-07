@@ -4,7 +4,7 @@
     <div v-else>
       <form @submit.prevent="onSubmit">
         <fieldset>
-          <h2>Editing recipe</h2>
+          <h1>Editing recipe</h1>
           <p>
             <label for="recipe-name">
               <div>
