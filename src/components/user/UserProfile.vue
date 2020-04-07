@@ -1,13 +1,16 @@
 <template>
   <div>
     user profile works
-    <div>Your email: {{userInfo.email}}</div>
-    <div>Your username: {{userInfo.displayName}}</div>
+    <div v-if="loader">Loading user data..</div>
+    <div v-else>
+      <div>Your email: {{ userInfo.email }}</div>
+      <div>Your username: {{ userInfo.displayName }}</div>
+    </div>
   </div>
 </template>
 
 <script>
-import userService from '@/mixins/user-service';
+import userService from "@/mixins/user-service";
 
 export default {
   name: "UserProfile",
@@ -30,7 +33,7 @@ export default {
     this.getUserData(payload);
   },
   methods: {},
-  mixins: [userService]
+  mixins: [userService],
 };
 </script>
 
