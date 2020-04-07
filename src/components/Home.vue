@@ -4,7 +4,7 @@
       <div v-if="loader">Loading data..</div>
       <div v-else>
         <section>
-          <div class="recipe-card" v-for="r in recipes" :key="r.recipeId">
+          <div class="recipe-card" v-for="r in sortedRecipes" :key="r.recipeId">
             <router-link :to="r | recipeViewLink"
               ><img v-bind:src="r.recipeImg" class="recipe-card-img"
             /></router-link>
@@ -46,17 +46,9 @@ export default {
     this.$emit("onAuth", localStorage.getItem("token") !== null);
   },
   created() {
-    this.getAllPosts();
+    this.getAllRecipes();
   },
   mixins: [recipesService],
-  methods: {
-    dateStringToTimestamp(date){
-      return Math.round(new Date(date).getTime()/1000);
-    }
-  },
-  computed: {
-
-  },
 };
 </script>
 

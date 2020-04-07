@@ -9,7 +9,7 @@ export default {
          }
     },
     methods: {
-        async getAllPosts() {
+        async getAllRecipes() {
             this.loader = true;
             try {
                 const res = await axiosDb.get(`recipes.json`);
@@ -20,6 +20,7 @@ export default {
                     ...allRecipesRes[recipeId]
                   });
                 }
+                
                 this.loader = false;
             } catch(err) {
                 console.log(err);
@@ -58,6 +59,14 @@ export default {
             } catch(err) {
                 console.log(err);
             }
+        },
+        dateStringToTimestamp(date){
+            return Math.round(new Date(date).getTime()/1000);
+        }
+    },
+    computed: {
+        sortedRecipes() {
+            return this.recipes.sort((a, b) => { return this.dateStringToTimestamp(b.createdOn) - this.dateStringToTimestamp(a.createdOn);});
         }
     }
 }
