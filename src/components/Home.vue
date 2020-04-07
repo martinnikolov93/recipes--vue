@@ -14,7 +14,7 @@
               }}</router-link>
             </h3>
             <div class="recipe-card-description">
-              {{ r.recipeDescr }}
+              {{ r.recipeDescr.slice(0, 130) }}...
             </div>
           </div>
         </section>
@@ -160,9 +160,9 @@ input.error {
 }
 
 .recipe-card-description {
-  padding: 5px;
+  /* padding: 5px;
   height: 90px;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 .content {
