@@ -7,7 +7,7 @@
       <div>Recipe Name: {{ selectedRecipe.name }}</div>
       <div>Recipe Description: {{ selectedRecipe.recipeDescr }}</div>
       <div><img v-bind:src="selectedRecipe.recipeImg" /></div>
-      <router-link :to="recipeId | recipeEditLink">Edit</router-link>
+      <router-link class="blue-button" :to="recipeId | recipeEditLink">Edit</router-link>
     </div>
   </div>
 </template>

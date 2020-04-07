@@ -1,12 +1,23 @@
 <template>
   <div id="home">
     <div v-if="isAuth">
-      Home Page works (authenticated)
       <div v-if="loader">Loading data..</div>
       <div v-else>
-        <p v-for="r in recipes" :key="r.recipeId">
-          <router-link :to="r | recipeViewLink">{{ r.name }}</router-link>
-        </p>
+        <section>
+          <div class="recipe-card" v-for="r in recipes" :key="r.recipeId">
+            <router-link :to="r | recipeViewLink"
+              ><img v-bind:src="r.recipeImg" class="recipe-card-img"
+            /></router-link>
+            <h3>
+              <router-link class="recipe-card-title" :to="r | recipeViewLink">{{
+                r.name
+              }}</router-link>
+            </h3>
+            <div class="recipe-card-description">
+              {{ r.recipeDescr }}
+            </div>
+          </div>
+        </section>
       </div>
     </div>
     <div v-else>
@@ -35,7 +46,7 @@ export default {
     this.$emit("onAuth", localStorage.getItem("token") !== null);
   },
   created() {
-      this.getAllPosts();
+    this.getAllPosts();
   },
   mixins: [recipesService],
 };
@@ -43,7 +54,8 @@ export default {
 
 <style>
 a {
-  color: #007bff;
+  color: #364d65;
+  text-decoration: none !important;
 }
 
 h1 {
@@ -64,7 +76,7 @@ input {
   flex: 0 1 100%;
   border: 1px solid;
   padding: 5px;
-  border-left: 1px solid #007bff;
+  /* border: 1px solid #007bff; */
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -75,6 +87,15 @@ button {
   border: none;
   border-radius: 3px;
   padding: 0.8em 1.2em;
+  width: 100%;
+}
+
+.blue-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 10px;
   width: 100%;
 }
 
@@ -111,5 +132,34 @@ p.error {
 
 input.error {
   border-left-color: #a8413f;
+}
+
+.recipe-card {
+  display: inline-block;
+  height: 435px;
+  width: 300px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(51, 51, 51);
+  border-image: initial;
+  border-radius: 3px;
+  padding: 0px;
+  margin: 7px;
+}
+
+.recipe-card-img {
+  width: 100%;
+  height: 250px;
+  border-bottom: solid rgb(51, 51, 51) 1px;
+}
+
+.recipe-card-title {
+  padding: 5px;
+}
+
+.recipe-card-description {
+  padding: 5px;
+  height: 90px;
+  overflow: hidden;
 }
 </style>

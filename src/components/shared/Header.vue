@@ -47,7 +47,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(95, 116, 158);
+  background-color: white;
   border: solid black 1px;
   border-radius: 2px;
 }
@@ -58,7 +58,7 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: #364d65;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -66,7 +66,7 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
+  background-color: #dadada;
 }
 
 .logout {
