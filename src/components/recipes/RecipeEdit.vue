@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import recipesMixin from "@/mixins/recipes-mixin";
+import recipesService from "@/mixins/recipes-service";
 
 export default {
   props: {
@@ -82,7 +82,7 @@ export default {
       this.editRecipe(this.recipeId, this.selectedRecipe);
     },
   },
-  mixins: [recipesMixin],
+  mixins: [recipesService],
 };
 </script>
 

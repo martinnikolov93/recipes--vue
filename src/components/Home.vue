@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import recipesMixin from "@/mixins/recipes-mixin";
+import recipesService from "@/mixins/recipes-service";
 
 export default {
   name: "Home",
@@ -37,7 +37,7 @@ export default {
   created() {
     this.getAllPosts();
   },
-  mixins: [recipesMixin],
+  mixins: [recipesService],
 };
 </script>
 

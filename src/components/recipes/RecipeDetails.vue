@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import recipesMixin from "@/mixins/recipes-mixin";
+import recipesService from "@/mixins/recipes-service";
 
 export default {
   name: "RecipeDetails",
@@ -37,7 +37,7 @@ export default {
     },
   },
   methods: {},
-  mixins: [recipesMixin],
+  mixins: [recipesService],
 };
 </script>
 

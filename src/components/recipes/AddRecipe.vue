@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import recipesMixin from "@/mixins/recipes-mixin";
+import recipesService from "@/mixins/recipes-service";
 
 export default {
   props: {
@@ -81,7 +81,7 @@ export default {
       });
     },
   },
-  mixins: [recipesMixin],
+  mixins: [recipesService],
 };
 </script>
 
