@@ -16,7 +16,7 @@
             name="email"
             id="email"
             placeholder="example@gmail.com"
-            @input="$v.password.$touch()"
+            @input="$v.email.$touch()"
           />
         </p>
         <div v-if="$v.email.$dirty">
