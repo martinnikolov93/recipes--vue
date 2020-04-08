@@ -10,8 +10,20 @@
               <i class="fas fa-envelope"></i>
             </span>
           </label>
-          <input v-model="email" type="text" name="email" id="email" placeholder="example@gmail.com" />
+          <input
+            v-model="email"
+            type="text"
+            name="email"
+            id="email"
+            placeholder="example@gmail.com"
+            @input="$v.password.$touch()"
+          />
         </p>
+        <div v-if="$v.email.$dirty">
+          <p v-if="!$v.email.required" class="error">
+            Email is required!
+          </p>
+        </div>
 
         <p class="field field-icon">
           <label for="password">
@@ -25,11 +37,20 @@
             name="password"
             id="password"
             placeholder="******"
+            @input="$v.password.$touch()"
           />
         </p>
+        <div v-if="$v.password.$dirty">
+          <p v-if="!$v.password.required" class="error">
+            Password is required!
+          </p>
+          <p v-if="!$v.password.minLength" class="error">
+            Password must be atleast 6 characters!
+          </p>
+        </div>
 
         <p>
-          <button>Login</button>
+          <button :disabled="$v.$invalid">Login</button>
         </p>
 
         <p class="text-center">
@@ -42,14 +63,16 @@
 </template>
 
 <script>
-import userService from '@/mixins/user-service';
+import userService from "@/mixins/user-service";
+import { validationMixin } from "vuelidate";
+import { required, minLength } from "vuelidate/lib/validators";
 
 export default {
   name: "SignIn",
   data: function() {
     return {
       email: "",
-      password: ""
+      password: "",
     };
   },
   methods: {
@@ -57,17 +80,18 @@ export default {
       const payload = {
         email: this.email,
         password: this.password,
-        returnSecureToken: true
+        returnSecureToken: true,
       };
 
       this.signIn(payload);
-    }
+    },
   },
-  mixins: [userService]
+  mixins: [userService, validationMixin],
+  validations: {
+    email: { required },
+    password: { required, minLength: minLength(6) },
+  },
 };
 </script>
 
-<style scoped>
-
-</style>
-
+<style scoped></style>

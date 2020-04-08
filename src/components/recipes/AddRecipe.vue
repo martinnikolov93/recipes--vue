@@ -15,8 +15,15 @@
             name="recipe-name"
             id="recipe-name"
             placeholder="Recipe name"
+            @input="$v.recipeName.$touch()"
           />
         </p>
+        <div v-if="$v.recipeName.$dirty">
+          <p v-if="!$v.recipeName.required" class="error">
+            Recipe name is required!
+          </p>
+        </div>
+
         <p>
           <label for="recipe-description">
             <div>
@@ -30,8 +37,15 @@
             name="recipe-description"
             id="recipe-description"
             placeholder="Recipe description"
+            @input="$v.recipeDescr.$touch()"
           ></textarea>
         </p>
+        <div v-if="$v.recipeDescr.$dirty">
+          <p v-if="!$v.recipeDescr.required" class="error">
+            Recipe description is required!
+          </p>
+        </div>
+
         <p>
           <label for="recipe-img">
             <div>
@@ -44,10 +58,17 @@
             name="recipe-img"
             id="recipe-img"
             placeholder="Recipe image"
+            @input="$v.recipeImg.$touch()"
           />
         </p>
+        <div v-if="$v.recipeImg.$dirty">
+          <p v-if="!$v.recipeImg.required" class="error">
+            Recipe image is required!
+          </p>
+        </div>
+
         <p>
-          <button>Add recipe</button>
+          <button :disabled="$v.$invalid">Add recipe</button>
         </p>
       </fieldset>
     </form>
@@ -56,6 +77,8 @@
 
 <script>
 import recipesService from "@/mixins/recipes-service";
+import { validationMixin } from "vuelidate";
+import { required } from "vuelidate/lib/validators";
 
 export default {
   props: {
@@ -81,7 +104,12 @@ export default {
       });
     },
   },
-  mixins: [recipesService],
+  mixins: [recipesService, validationMixin],
+  validations: {
+    recipeName: { required },
+    recipeDescr: { required },
+    recipeImg: { required },
+  },
 };
 </script>
 

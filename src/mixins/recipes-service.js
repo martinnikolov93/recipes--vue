@@ -43,6 +43,8 @@ export default {
                 await axiosDb.get(`recipes/${recipeId}.json`).then(res => {
                     this.selectedRecipe = res.data;
                     this.loader = false;
+
+                    return res.data;
                 })
             } catch(err) {
                 console.log(err);

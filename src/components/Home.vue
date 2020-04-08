@@ -91,6 +91,13 @@ button {
   width: 100%;
 }
 
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 .blue-button {
   background-color: #007bff;
   color: white;
@@ -160,9 +167,7 @@ input.error {
 }
 
 .recipe-card-description {
-  /* padding: 5px;
-  height: 90px;
-  overflow: hidden; */
+   padding: 5px;
 }
 
 .content {
