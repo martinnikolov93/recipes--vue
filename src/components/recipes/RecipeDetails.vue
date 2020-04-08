@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="loader">Loading data..</div>
+    <div v-if="loader" class="loader">Loading data..</div>
     <div v-else>
       <section>
         <div class="content">

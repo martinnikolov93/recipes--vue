@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <div v-if="isAuth">
-      <div v-if="loader">Loading data..</div>
+      <div v-if="loader" class="loader">Loading data..</div>
       <div v-else>
         <section>
           <div class="recipe-card" v-for="r in sortedRecipes" :key="r.recipeId">
@@ -52,97 +52,7 @@ export default {
 };
 </script>
 
-<style>
-a {
-  color: #364d65;
-  text-decoration: none !important;
-}
-
-h1 {
-  text-align: center;
-}
-form {
-  margin-top: 20px;
-  margin: 20px auto;
-  width: 40%;
-}
-
-fieldset {
-  border-radius: 10px;
-  padding: 20px;
-}
-
-input {
-  flex: 0 1 100%;
-  border: 1px solid;
-  padding: 5px;
-  /* border: 1px solid #007bff; */
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  width: 100%;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  padding: 0.8em 1.2em;
-  width: 100%;
-}
-
-button:disabled,
-button[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
-}
-
-.blue-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  padding: 3px 10px;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-i {
-  border: 1px solid;
-  border-right: none;
-  padding: 10px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  background-color: #e9ecef;
-}
-
-.container {
-  font-family: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-form .field {
-  display: flex;
-}
-
-/* if error */
-
-p.error {
-  text-align: left;
-  background-color: #f8d7da;
-  padding: 8px;
-  border-radius: 3px;
-}
-
-input.error {
-  border-left-color: #a8413f;
-}
-
+<style scoped>
 .recipe-card {
   display: inline-block;
   height: 435px;
@@ -167,17 +77,6 @@ input.error {
 }
 
 .recipe-card-description {
-   padding: 5px;
-}
-
-.content {
-  margin: 10px auto;
-  width: 750px;
-  padding: 15px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(51, 51, 51);
-  border-image: initial;
-  border-radius: 3px;
+  padding: 5px;
 }
 </style>
