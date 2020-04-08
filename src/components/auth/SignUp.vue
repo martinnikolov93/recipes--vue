@@ -2,7 +2,7 @@
   <div id="sign-up">
     <form @submit.prevent="onSignUp">
       <fieldset>
-        <h1>Sign Up DA TI EBA PUTKATA LELINA</h1>
+        <h1>Sign</h1>
 
         <p class="field field-icon">
           <label for="username">
