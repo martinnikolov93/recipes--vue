@@ -18,11 +18,6 @@
               id="recipe-name"
             />
           </p>
-          <!-- <div v-if="$v.recipeName.$dirty">
-            <p v-if="!$v.recipeName.required" class="error">
-              Recipe name is required!
-            </p>
-          </div> -->
 
           <p>
             <label for="recipe-description">
@@ -64,8 +59,6 @@
 
 <script>
 import recipesService from "@/mixins/recipes-service";
-import { validationMixin } from "vuelidate";
-import { required } from "vuelidate/lib/validators";
 
 export default {
   props: {
@@ -88,10 +81,7 @@ export default {
       this.editRecipe(this.recipeId, this.selectedRecipe);
     },
   },
-  mixins: [recipesService, validationMixin],
-  validations: {
-    recipeName: { required },
-  },
+  mixins: [recipesService],
 };
 </script>
 
