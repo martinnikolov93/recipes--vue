@@ -1,7 +1,7 @@
 # Project status
 Project is still in development..
 # About
-Simple recipe publishing website
+Simple vue recipe publishing website
 # Requirements
 NodeJS, Computer Terminal (obviously)
 # Install project
