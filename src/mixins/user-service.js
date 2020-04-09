@@ -1,4 +1,4 @@
-import authAxios from '@/axios-auth';
+import authAxios from '@/axios/axios-auth';
 
 export default {
     data: function () {
@@ -65,6 +65,5 @@ export default {
                 console.log(err);
             }
         },
-
     }
 }
