@@ -7,7 +7,12 @@ const instance = axios.create({
 
 // Add token to every request
 instance.interceptors.request.use(config => {
-    config.url = `${config.url}?auth=${localStorage.getItem('token')}`;
+    if(config.url.includes('equalTo')){
+        config.url = `${config.url}&auth=${localStorage.getItem('token')}`;
+    } else {
+        config.url = `${config.url}?auth=${localStorage.getItem('token')}`;
+    }
+    
     if (config.method == 'post'){
         config.data.createdOn = new Date();
         config.data.createdBy = localStorage.getItem('userId');

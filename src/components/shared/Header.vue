@@ -73,13 +73,13 @@ li a {
 li a:hover {
   background-color: #f1f1f1;
   color: black;
-  border-bottom: solid #3b7fc5 1px;
+  border-bottom: solid #7b7b7b 1px;
 }
 
 .router-link-exact-active {
   background-color: #f1f1f1;
   color: black;
-  border-bottom: solid #3b7fc5 1px;
+  border-bottom: solid #7b7b7b 1px;
 }
 
 .logout {

@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 .recipe-card {
-  display: inline-block;
+  display: inline-table;
   height: 435px;
   width: 300px;
   border-width: 1px;

@@ -5,7 +5,8 @@ export default {
         return { 
             selectedRecipe: {},
             recipes: [],
-            loader: false
+            loader: false,
+            userRecipes: [],
          }
     },
     methods: {
@@ -18,6 +19,23 @@ export default {
                   this.recipes.push({
                     recipeId,
                     ...allRecipesRes[recipeId]
+                  });
+                }
+                
+                this.loader = false;
+            } catch(err) {
+                console.log(err);
+            }
+        },
+        async getUserRecipes(id) {
+            this.loader = true;
+            try {
+                const res = await axiosDb.get(`recipes.json?orderBy="createdBy"&equalTo="${id}"`);
+                const userRecipesRes = res.data;
+                for (const recipeId in userRecipesRes) {
+                  this.userRecipes.push({
+                    recipeId,
+                    ...userRecipesRes[recipeId]
                   });
                 }
                 
