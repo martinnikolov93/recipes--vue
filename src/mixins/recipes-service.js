@@ -71,7 +71,6 @@ export default {
         async editRecipe(recipeId, recipeData) {
             this.loader = true;
             try {
-                console.log(recipeId, recipeData)
                 await axiosDb.put(`recipes/${recipeId}.json`, recipeData).then(() => {
                     this.$router.push({ name: 'recipe-details', params: { id: recipeId }})
                     this.loader = false;
