@@ -1,5 +1,3 @@
-# Project status
-Project is still in development..
 # About
 Simple vue recipe publishing website
 # Requirements
