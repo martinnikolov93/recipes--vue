@@ -44,9 +44,6 @@
           <p v-if="!$v.password.required" class="error">
             Password is required!
           </p>
-          <p v-if="!$v.password.minLength" class="error">
-            Password must be atleast 6 characters!
-          </p>
         </div>
 
         <p>
@@ -65,7 +62,7 @@
 <script>
 import userService from "@/mixins/user-service";
 import { validationMixin } from "vuelidate";
-import { required, minLength } from "vuelidate/lib/validators";
+import { required } from "vuelidate/lib/validators";
 
 export default {
   name: "SignIn",
@@ -89,7 +86,7 @@ export default {
   mixins: [userService, validationMixin],
   validations: {
     email: { required },
-    password: { required, minLength: minLength(6) },
+    password: { required },
   },
 };
 </script>
