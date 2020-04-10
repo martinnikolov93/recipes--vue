@@ -54,9 +54,6 @@ export default {
   border-radius: 2px;
 }
 
-ul {
-}
-
 li {
   float: left;
 }
